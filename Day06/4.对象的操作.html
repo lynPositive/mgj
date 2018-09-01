@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//对象的概念:一切皆对象.
+		//对象:对象是javascript的数据类型。(引用类型)
+		//对象:是一种复合值，它将很多值聚合在一起，可通过名字访问这些值。
+		//对象:也看做是属性的无序集合，每个属性都是一个名/值对。(键值对)
+		
+		//1.字面量创建自定义的对象。
+		//对象：属性+方法
+		var obj={
+			name:'zhangsan',
+			age:100,
+			sex:'男',
+			showinfo:function(){
+				return '我的名字是'+obj.name+',我今年'+obj.age+'岁，我是'+obj.sex+'的';
+			}
+		}
+		//访问属性
+		//alert(obj.name);//zhangsan
+		//alert(obj.showinfo);//function(){return '我的名字是'+obj.name+',我今年'+obj.age+'岁，我是'+obj.sex+'的';}
+		
+		//访问方法
+		//document.write(obj.showinfo());
+		
+		
+		//2.构造函数创建自定义对象。
+		/*var obj=new Object();
+		obj.name='zhangsan';
+		obj.age=100;
+		obj.sex='男';
+		obj.showinfo=function(){
+			return '我的名字是'+obj.name+',我今年'+obj.age+'岁，我是'+obj.sex+'的';
+		}
+		alert(obj.name);//zhangsan
+		alert(obj.showinfo);//function(){return '我的名字是'+obj.name+',我今年'+obj.age+'岁，我是'+obj.sex+'的';}
+		document.write(obj.showinfo());*/
+		
+		
+		
+		//3.数组和对象一起操作
+		
+		/*var obj={
+			a:[1,2,3,4],
+			b:'hello',
+			c:true
+		}*/
+		
+		//console.log(obj.b);
+		//console.log(obj.a[2]);				
+		//4.对象的属性名：对象的属性名一定是字符串，自动将属性名通过toString()的方法转换。
+		var obj={
+			1:200,
+			3:400,
+		}
+		
+		var obj1={
+			a:[1,2,3,4],
+			b:'hello',
+			c:true
+		}
+		//alert(obj.'1');//报语法错误//点操作符后面不能为数字
+		// alert(obj1.a["1"]);
+		/*alert(obj[1]);//200
+		alert(obj['1']);*///200
+		
+		//5.两种方式获取对象的值。
+		//通过点操作符：后面一定是字符串，无需添加引号。不能是数字
+		//通过中括号：后面可以是字符串和变量或者任意类型。如果是字符串一定要添加引号。
+		//alert(obj1.b);//hello
+		//alert(obj1['b']);//hello
+		
+		/*var obj={};
+		alert(obj);//[object Object]
+		alert(typeof obj);//object*/
+		
+		
+		//6.json创建对象表示方式。不能说是json数据。
+//		JSON的特点
+//		json: 是一种轻量级的数据交换格式。不是js独有的。
+//		json组成：对象+数组。
+//		json里面字符串需要添加双引号。
+//		json没有var关键字,没有分号(;)
+		   var obj={
+				"name":"zhangsan",
+				"age":100,
+				"sex":"男",
+				"data":[100,200,300]
+		   }
+		
+		  alert(obj.name);
+		
+		
+	/*	var num=1;
+		function fn(){
+			if(false)
+			{
+				var num=10;
+			}			
+		   console.log(num);
+		}
+		fn();*/
+		var bool=!!2;alert(bool);
+		</script>
+	</body>
+</html>

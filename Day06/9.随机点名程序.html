@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 50px;
+				border: 3px solid red;
+				margin: 100px auto;
+				font-size: 40px;
+				line-height: 50px;
+				text-align: center;
+				cursor: pointer; 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">开始抽奖</div>
+		<script type="text/javascript">
+			//window.setInterval():间隔定时器，反复执行的定时器，规定的时间内反复执行定时器里面的代码。
+			//第一个参数：函数
+			//第二个参数：时间(ms)
+			
+		  /* var timer=setInterval(function(){
+				console.log('hello');
+			},1000);
+			*/
+			//window.clearInterval(timer):关闭定时器。
+			//参数：定时器的返回值，关闭的定时器的返回值。
+			
+			/*document.onclick=function(){
+				clearInterval(timer);
+			}*/
+			/*var arr=['谢谢惠顾','新马泰十日游','小米电视','宝马汽车','洗衣粉','千锋试听2个月','现金100万','加油加油'];
+			var box=document.getElementById('box');
+			var timer=null;
+			var bstop=true;
+			box.onclick=function(){
+				 timer=setInterval(function(){
+				 	 var raninex=parseInt(Math.random()*arr.length);//随机产生0-7
+				 	 box.innerHTML=arr[ranindex];
+				 },5);
+			}*/
+			
+			
+			
+			
+			
+			var arr=['谢谢惠顾','新马泰十日游','小米电视','宝马汽车','洗衣粉','千锋试听2个月','现金100万','加油加油'];
+			var box=document.getElementById('box');
+			var timer=null;
+			var bstop=true;//开关
+			/*box.onclick=function(){
+				//innerHTML:获取元素对象内部的内容，包括标签。
+				timer=setInterval(function(){
+					var ranindex=parseInt(Math.random()*arr.length);//随机产生0-7
+					box.innerHTML=arr[ranindex];
+				},5);
+			}*/
+			
+			document.onkeydown=function(ev){//ev:事件对象。
+				//alert(ev.keyCode);//输出对应的键码。
+				if(ev.keyCode===32 && bstop){
+					bstop=false;
+					timer=setInterval(function(){
+						var ranindex=parseInt(Math.random()*arr.length);//随机产生0-7
+						box.innerHTML=arr[ranindex];
+					},5);
+				}else if(ev.keyCode===32){
+					clearInterval(timer);
+					bstop=true;
+				}
+			}
+		</script>
+	</body>
+</html>

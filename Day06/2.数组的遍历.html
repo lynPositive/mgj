@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.数组的遍历
+			//var arr=['apple','banana','pear','orange'];
+			/*alert(arr[0]);
+			alert(arr[1]);
+			alert(arr[2]);
+			alert(arr[3]);*/
+			
+			/*for(var i=0;i<arr.length;i++){
+				alert(arr[i]);//0,1,2,3
+			}*/
+			
+			/*for(var i=0,len=arr.length;i<len;i++){
+				alert(arr[i]);
+			}*/
+			
+			
+			//2.数组的检测--Array.isArray():确定括号中的某个值到底是不是数组,返回布尔值
+			var arr=['a','b','c'];
+			var n=null;
+			//alert(typeof n);//object
+			//alert(typeof arr);//object
+			alert(Array.isArray(arr));//true
+			alert(Array.isArray(n));//false
+		</script>
+	</body>
+</html>

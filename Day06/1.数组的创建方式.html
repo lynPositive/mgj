@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.数组的概念：一组一般情况下相同类型的数据。
+			//'apple','banana','pear','orange'
+			
+			//2.创建数组的二种方式。
+			//2.1 利用系统提供构造函数创建数组。
+			//构造函数：函数调用的时候需要前面添加new关键字，同时函数名首字母大写。
+			//var arr=new Array('apple','banana','pear','orange');
+			//输出数组的值：数组名相当于数组的值。
+			//alert(arr);
+			//console.log(arr);
+			
+			//2.2 利用字面量的形式创建数组(简写风格)
+			//字面量：在计算机科学中，字面量是用于表达源代码中一个固定值的表示法
+			//var arr=['apple','banana','pear','orange'];
+			
+			//3.创建一个多值(多类型值)的数组
+			//var arr=['hello',1234,true,undefined,null,function(){alert('我是函数')},[1,2,3,4]];
+			//alert(arr);//hello,1234,true,,,function(){alert('我是函数')},1,2,3,4
+			//console.log(arr);
+			
+			
+			//4.访问数组的值-通过下标，而且下标是自动编号，默认从0开始。
+			//var arr=['hello',1234,true,undefined,null,function(){alert('我是函数')},[1,2,3,4]];
+			//alert(arr[1]);//1234
+			//alert(arr[5]());//我是函数，undefined
+			
+			//alert(arr[20]);//undefined
+			
+			//5.数组的length属性：数组的长度
+			//console.log(arr.length);//7
+			//arr[20]='ending';
+			//console.log(arr.length);//21
+			//console.log(arr);
+			
+			
+			//var arr=['hello',1234,true,undefined,null,function(){alert('我是函数')},[1,2,3,4]];
+			//arr.length=2;//后面的数组项自动去掉。
+			//alert(arr);//hello,1234
+			
+			//arr.length=100;
+			//console.log(arr);
+			//alert(arr);
+			
+			
+			//核心：通过数组的下标和数组的length属性动态改变数组
+			
+			
+			//6.数组定义的特殊情况:构造函数定义数组时：如果数组里面只有一个值，而且值是数字，此时的数字代表的是数组的长度。而不是数组的值。
+			/*var arr=new Array(5);
+			alert(arr.length);
+			alert(arr[0]);//undefined
+			
+			
+			var arr1=[5];
+			alert(arr1.length)//1
+			alert(arr1[0]);//5*/
+			
+			
+			
+		</script>
+	</body>
+</html>

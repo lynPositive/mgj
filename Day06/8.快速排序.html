@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1.快速排序
+			//在数组中截取中间值，中间值可以任意获取。--splice
+			//剩余的数组项都和中间值进行比较，如果比中间值小，放置在一个数组中，比中间值大，放到另外一个数组中。
+			//分别对上面的两个数组重复上面的操作--递归
+			//最终利用concat进行拼接。输出结果
+			
+			var arr=[9,300,4,890,7500,456,20,70,-100,-9];
+			function quicksort(array){
+				if(array.length==0){
+					return array;
+				}else{
+					var midindex=parseInt(array.length/2);//获取中间索引
+					var midvalue=array.splice(midindex,1)[0];//获取中间值
+					var left=[];
+					var right=[];
+					for(var i=0;i<array.length;i++){
+						if(array[i]<midvalue){
+							left.push(array[i]);
+						}else{
+							right.push(array[i]);
+						}
+					}
+				   
+					return quicksort(left).concat(midvalue,quicksort(right)); 
+				}
+				
+			}
+			console.log(quicksort(arr));
+			
+			
+		/*	var arr=[9,300,4,890,7500,456,20,70,-100,-9,9,300,4,890,7500,456,20,70,-100,-9];
+			function quicksort(array){
+				if(array.length<=1){
+					return array;
+				}else{
+					var midindex=parseInt(array.length/2);//获取中间索引
+					var midvalue=array.splice(midindex,1)[0];//获取中间值
+					var left=[];
+					var right=[];
+					for(var i=0;i<array.length;i++){
+						if(array[i]<midvalue){
+							left.push(array[i]);
+						}else if(array[i]>midvalue){
+							right.push(array[i]);
+						}
+					}
+					return quicksort(left).concat(midvalue,quicksort(right)); 
+				}
+			}
+			console.log(quicksort(arr));*/
+			
+			
+			/*function has(array,num){
+				for(var i=0;i<array.length;i++){
+					if(array[i]===num){
+						return true;
+					}
+				}
+				return false;
+			}*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//整数数组/字符串数组
+			var arrnum=[1,2,3,4,5];
+			var arrstr=['a','b','hello'];
+			//1.对象数组
+			//var arrobj=[{a:1,b:2},{c:3,d:4},{e:5,f:6},{g:7}];
+			//alert(arrobj[2].f);
+			//alert(arrobj[2]['f']);
+			//alert(arrobj[2]);//[object object];
+			//console.log(arrobj[2]);//{e:5,f:6}
+			//2.二维数组:数组里面数组项还是一个数组。
+			//var arr1=[1,2,[3,4],['apple','orange']];
+			//alert(arr1[3][1]);//orange
+			
+			//var arr=[1,2,[3,4,[5,6,[7,8,[9]]]]];//多维数组
+			//console.log(arr[2][2][2][2][0])//9
+			//3.如何获取(对象和数组)组合里面的值
+			var obj={
+				"result": [
+					["佰成男装", "27.31257993943511"],
+					["白色运动群", "26.772996543419975"],
+					["白色 女 上衣", "26.836696105951635"],
+					["薄 夏 裤", "26.876935823050694"],
+					["白色上衣女夏", "22.40748423934188"],
+					["百搭款", "26.903926809662487"],
+					["摆饰品", "26.858441024270498"],
+					["白色女", "26.827826546611785"],
+					["白色西短", "26.993414824506722"],
+					["布邋遢", "27.085224495165626"]
+				],
+				"magic": [{
+					"index": "3",
+					"type": "tag_group",
+					"data": [
+						[{
+							"title": "夏季"
+						}, {
+							"title": "学生"
+						}, {
+							"title": "常规"
+						}, {
+							"title": "印花"
+						}, {
+							"title": "简约"
+						}, {
+							"title": "中长款"
+						}, {
+							"title": "显瘦"
+						}, {
+							"title": "短袖"
+						}, {
+							"title": "宽松"
+						}, {
+							"title": "大码",
+							"type": "hot"
+						}]
+					]
+				}, {
+					"index": "5",
+					"type": "tag_group",
+					"data": [
+						[{
+							"title": "大码",
+							"type": "hot"
+						}, {
+							"title": "学生很棒11111111"
+						}, {
+							"title": "常规"
+						}, {
+							"title": "简约"
+						}, {
+							"title": "中长款"
+						}, {
+							"title": "显瘦"
+						}, {
+							"title": "短袖"
+						}, {
+							"title": "纯棉"
+						}, {
+							"title": "宽松"
+						}, {
+							"title": "韩国"
+						}]
+					]
+				}]
+			}
+			
+			console.log(obj.magic[1].data[0][1].title);
+			
+			//4.数组和对象的遍历。
+			//for循环遍历：遍历数组
+			//for...in遍历：遍历数组和对象
+			var arr=['a1','b1','c1','d1'];
+			/*for(var i=0;i<arr.length;i++){
+				console.log(arr[i]);
+			}*/
+			
+			/*for(var i in arr){//i:数组的下标或者索引   arr:遍历的数组
+				console.log(arr[i]);
+			}*/
+			
+			
+			/*var obj={
+				"name":"zhangsan",
+				"age":100,
+				"sex":"男"	
+		    }
+			
+			
+			for(var i in obj){//i:对象的属性   obj[i]:属性对应的值。
+				console.log(i+':'+obj[i]);
+			}*/
+			
+			
+			var weather={
+					"date": "20180724",
+					"message": "Success !",
+					"status": 200,
+					"city": "杭州",
+					"count": 1,
+					"data": {
+						"shidu": "91%",
+						"pm25": 20.0,
+						"pm10": 33.0,
+						"quality": "优",
+						"wendu": "27",
+						"ganmao": "各类人群可自由活动",
+						"yesterday": {
+							"date": "23日星期一",
+							"sunrise": "05:11",
+							"high": "高温 35.0℃",
+							"low": "低温 26.0℃",
+							"sunset": "18:59",
+							"aqi": 58.0,
+							"fx": "西南风",
+							"fl": "<3级",
+							"type": "多云",
+							"notice": "阴晴之间，谨防紫外线侵扰"
+						},
+						"forecast": [{
+							"date": "24日星期二",
+							"sunrise": "05:12",
+							"high": "高温 35.0℃",
+							"low": "低温 27.0℃",
+							"sunset": "18:59",
+							"aqi": 44.0,
+							"fx": "南风",
+							"fl": "<3级",
+							"type": "雷阵雨",
+							"notice": "带好雨具，别在树下躲雨"
+						}, {
+							"date": "25日星期三",
+							"sunrise": "05:12",
+							"high": "高温 36.0℃",
+							"low": "低温 27.0℃",
+							"sunset": "18:58",
+							"aqi": 60.0,
+							"fx": "东南风",
+							"fl": "<3级",
+							"type": "多云",
+							"notice": "阴晴之间，谨防紫外线侵扰"
+						}, {
+							"date": "26日星期四",
+							"sunrise": "05:13",
+							"high": "高温 37.0℃",
+							"low": "低温 27.0℃",
+							"sunset": "18:58",
+							"aqi": 70.0,
+							"fx": "东南风",
+							"fl": "<3级",
+							"type": "晴",
+							"notice": "愿你拥有比阳光明媚的心情"
+						}, {
+							"date": "27日星期五",
+							"sunrise": "05:14",
+							"high": "高温 38.0℃",
+							"low": "低温 27.0℃",
+							"sunset": "18:57",
+							"aqi": 59.0,
+							"fx": "东风",
+							"fl": "<3级",
+							"type": "晴",
+							"notice": "愿你拥有比阳光明媚的心情"
+						}, {
+							"date": "28日星期六",
+							"sunrise": "05:14",
+							"high": "高温 37.0℃",
+							"low": "低温 26.0℃",
+							"sunset": "18:57",
+							"aqi": 43.0,
+							"fx": "东风",
+							"fl": "<3级",
+							"type": "晴",
+							"notice": "愿你拥有比阳光明媚的心情"
+						}]
+					}
+				}
+			
+			var htmlstr='<table border="1">';
+			var data=weather.data.forecast;//数组
+			console.log(data);
+			for(var i=0;i<data.length;i++){//data.length:5
+				htmlstr+='<tr>';
+					for(var j in data[i]){//data[i]:对象
+						htmlstr+='<td>'+data[i][j]+'</td>'
+					}
+				htmlstr+='</tr>';
+			}
+			
+			htmlstr+='</table>';
+			document.write(htmlstr);
+		</script>
+	</body>
+</html>
